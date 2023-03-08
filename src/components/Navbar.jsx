@@ -25,11 +25,6 @@ export function Navbar() {
       <div className="collapse navbar-collapse" id="navbarText">
         <ul className="navbar-nav me-auto">
           <li>
-            <Link to={'About'} className="btn text-success lighten-30 selectable text-uppercase">
-              About
-            </Link>
-          </li>
-          <li>
             <Link to={'House'} className="btn text-success lighten-30 selectable text-uppercase">
               Houses
             </Link>
@@ -37,6 +32,11 @@ export function Navbar() {
           <li>
             <Link to={'Job'} className="btn text-success lighten-30 selectable text-uppercase">
               Jobs
+            </Link>
+          </li>
+          <li>
+            <Link to={'About'} className="btn text-success lighten-30 selectable text-uppercase">
+              Single Page
             </Link>
           </li>
         </ul>

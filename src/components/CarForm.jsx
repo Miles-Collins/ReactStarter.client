@@ -13,12 +13,14 @@ const bindEditable = BindEditable(editable)
 
 async function handleSubmit() {
   try {
+    debugger
     // @ts-ignore
     window.event.preventDefault()
     logger.log({editable})
     editable.id 
     ? await carsService.editCar(editable, editable.id) 
     : await carsService.createCar(editable)
+    Pop.success(`${editable.make} ${editable.model} was successfully created.`)
   } catch (error) {
     console.error(error)
    // @ts-ignore 
@@ -32,27 +34,27 @@ async function handleSubmit() {
 
         <div className="mb-1">
           <label htmlFor="make" className="form-label">Make</label>
-          <input required type="text" defaultValue={editable.make} className="form-control" id="make" placeholder="Make..." name="make" onChange={bindEditable}/>
+          <input required type="text" defaultValue={editable.make} className="form-control" id="make" placeholder="Make..." name="make" onChange={bindEditable} />
         </div>
         
         <div className="mb-1">
           <label htmlFor="model" className="form-label">Model</label>
-          <input required type="text" defaultValue={editable.model} className="form-control" id="model" placeholder="Model..." name="model" onChange={bindEditable}/>
+          <input required type="text" defaultValue={editable.model} className="form-control" id="model" placeholder="Model..." name="model" onChange={bindEditable} />
         </div>
 
         <div className="mb-1">
           <label htmlFor="price" className="form-label">Price</label>
-          <input required type="number" defaultValue={editable.price} className="form-control" id="price" placeholder="Price..." name="price" onChange={bindEditable}/>
+          <input required type="number" defaultValue={editable.price} className="form-control" id="price" placeholder="Price..." name="price" onChange={bindEditable} />
         </div>
         
         <div className="mb-1">
           <label htmlFor="year" className="form-label">Year</label>
-          <input required type="number" defaultValue={editable.year} className="form-control" id="year" placeholder="Year..." name="year" onChange={bindEditable}/>
+          <input required type="number" defaultValue={editable.year} className="form-control" id="year" placeholder="Year..." name="year" onChange={bindEditable} />
         </div>
 
         <div className="mb-1">
           <label htmlFor="imgUrl" className="form-label">Image</label>
-          <input required type="url" defaultValue={editable.imgUrl} className="form-control" id="imgUrl" placeholder="Image..." name="imgUrl" onChange={bindEditable}/>
+          <input required type="url" defaultValue={editable.imgUrl} className="form-control" id="imgUrl" placeholder="Image..." name="imgUrl" onChange={bindEditable} />
         </div>
 
         <div className="mb-1">

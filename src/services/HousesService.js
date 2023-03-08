@@ -4,6 +4,16 @@ import { logger } from "../utils/Logger";
 import { api } from "./AxiosService";
 
 class HousesService {
+  create(editable) {
+    throw new Error("Method not implemented.");
+  }
+  async edit(editable, id) {
+    const res = await api.put(`api/houses/${editable.id}`);
+    logger.log("edit  res:", res.data);
+    let index = AppState.houses.findIndex((house) => house.id == editable.id);
+    AppState.houses.splice(index, 1, new House(res.data));
+    logger.log("edit  AppState.houses:", AppState.houses);
+  }
   async getHouses() {
     let res = await api.get("api/houses");
     logger.log("getHouses  res:", res.data);
