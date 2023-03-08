@@ -1,0 +1,30 @@
+.job-card {
+background-color: white;
+-moz-box-shadow: 0 0 5px black;
+-webkit-box-shadow: 0 0 5px black;
+box-shadow: 0 0 5px black;
+}
+
+.job-card:hover {
+  cursor: pointer;
+  -moz-box-shadow: 0 0 50px antiquewhite;
+-webkit-box-shadow: 0 0 50px antiquewhite;
+box-shadow: 0 0 50px antiquewhite;
+}
+
+.job-card {img {
+    height: 30vh;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.job-card{p {
+  font-size: .9rem;
+}}
+
+p {
+  padding: 0;
+  margin: 0;
+}
