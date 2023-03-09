@@ -4,6 +4,15 @@ import { logger } from "../utils/Logger";
 import { api } from "./AxiosService";
 
 class JobsService {
+  async create(editable) {
+    const res = await api.post("api/jobs", editable);
+    logger.log("create  res:", res.data);
+    AppState.jobs.push(new Job(res.data));
+    logger.log("create  AppState.jobs:", AppState.jobs);
+  }
+  edit(editable) {
+    throw new Error("Method not implemented.");
+  }
   async removeJob(id) {
     const res = await api.delete(`api/jobs/${id}`);
     logger.log("removeJob  res:", res.data);

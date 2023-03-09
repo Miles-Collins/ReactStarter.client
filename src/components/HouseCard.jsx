@@ -12,7 +12,7 @@ import './Styles/HouseCard.scss'
 /**@param {{house:House}} props */
 function HouseCard({house}) {
   const editable = {house}
-  const bindEditable = BindEditable(editable)
+  // const bindEditable = BindEditable(editable)
 
   async function remove() {
     try {
@@ -27,6 +27,7 @@ function HouseCard({house}) {
 
   async function edit() {
     try {
+      setActive()
       logger.log("HouseCard  editable:", editable);
     }
     catch (error){
@@ -41,9 +42,9 @@ function HouseCard({house}) {
 
   return (
 
-    <div onClick={setActive} className="card">
+    <div className="card">
       <div className="card-header text-end">
-        <button onClick={edit} data-bs-toggle="modal" data-bs-target="#houseModal" className="btn selectable"><span className="mdi mdi-pencil"></span></button>
+        <button  onClick={edit} data-bs-toggle="modal" data-bs-target="#houseModal" className="btn selectable"><span className="mdi mdi-pencil"></span></button>
         <button onClick={remove} className="selectable btn" title="Delete House!">✖️</button>
       </div>
       <img className="selectable houseCard" src={house.houseImg} alt="" srcSet="" />

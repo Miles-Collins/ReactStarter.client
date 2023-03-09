@@ -5,9 +5,7 @@ export class House {
     this.bedrooms = data.bedrooms || 0;
     this.createdAt = data.createdAt || new Date();
     this.description = data.description || "";
-    this.houseImg =
-      data.imgUrl ||
-      "https://fedphoneline.com/upload/correctional/thumb/no-image.gif";
+    this.houseImg = data.imgUrl;
     this.levels = data.levels || 0;
     this.price = data.price || 0;
     this.updatedAt = data.updatedAt || new Date();

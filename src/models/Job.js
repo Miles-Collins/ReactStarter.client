@@ -1,6 +1,7 @@
 export class Job {
   constructor(data = {}) {
     this.id = data.id;
+    this.company = data.company;
     this.createdAt = data.createdAt;
     this.updatedAt = data.updatedAt;
     this.description = data.description;

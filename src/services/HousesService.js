@@ -8,7 +8,7 @@ class HousesService {
     throw new Error("Method not implemented.");
   }
   async edit(editable, id) {
-    const res = await api.put(`api/houses/${editable.id}`);
+    const res = await api.put(`api/houses/${editable.id}`, editable);
     logger.log("edit  res:", res.data);
     let index = AppState.houses.findIndex((house) => house.id == editable.id);
     AppState.houses.splice(index, 1, new House(res.data));

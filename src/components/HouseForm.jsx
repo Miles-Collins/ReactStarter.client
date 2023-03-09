@@ -8,15 +8,14 @@ import { logger } from "../utils/Logger";
 import Pop from "../utils/Pop";
 
 function HouseForm() {
-  const editable = { ...AppState.activeHouse || new House({})}
+  let editable = { ...AppState.activeHouse || new House({})}
   const bindEditable = BindEditable(editable)
 
   async function handleSubmit() {
     try {
-      debugger
     if(window.event) {
     window.event.preventDefault()
-    logger.log({editable})
+    logger.log("HouseForm  editable:", editable);
     editable.id 
     ? await housesService.edit(editable, editable.id) 
     : await housesService.create(editable)
@@ -25,6 +24,8 @@ function HouseForm() {
     } else {
       Pop.success("House created.")
     }
+    AppState.activeHouse = null
+    logger.log("handleSubmit  AppState.activeHouse:", AppState.activeHouse);
     }
     } catch (error) {
       logger.error(error)
@@ -35,7 +36,7 @@ function HouseForm() {
 
   return (
 
-    <form onSubmit={handleSubmit} key="editable.id">
+    <form onSubmit={handleSubmit} key={editable.id}>
       <div className="modal-body">
 
     <div className="mb-1">

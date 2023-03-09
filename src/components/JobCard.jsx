@@ -31,6 +31,7 @@ let title = `Remove ${job.title}`
     <div onClick={setActive} className="col-12 job-card">
       <div className="row p-2">
         <div className="col-10">
+          <h4>{job.company}</h4>
           <h5>{job.title}</h5>
         </div>
         <div className="col-2 text-end">
